@@ -58,7 +58,7 @@ const formatCardNumber = (value) => {
 
 const handleCardInput = (e) => {
   const rawValue = e.target.value.replace(/\D/g, ""); // Only digits
-  if (rawValue.length > 16) {
+  if (rawValue.length > 20) {
     toast.warning("Card number cannot exceed 16 digits");
     return;
   }
