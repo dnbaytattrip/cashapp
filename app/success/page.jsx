@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -13,7 +5,7 @@ import { API_URL, site } from "../config/index";
 import Cookies from "js-cookie";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import CloseIcon from "@mui/icons-material/Close"; // Optional: requires @mui/icons-material
+import CloseIcon from "@mui/icons-material/Close";
 
 function Page() {
   const router = useRouter();
