@@ -90,7 +90,7 @@ const handleCardInput = (e) => {
               onChange={handleCardInput}
               placeholder="XXXX XXXX XXXX XXXX"
               className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
-              maxLength={20} // 16 digits + 3 spaces
+              maxLength={19} // 16 digits + 3 spaces
             />
 
           <div className="flex flex-col gap-3">
