@@ -61,7 +61,7 @@ function Home({ adminId, posterId }) {
           </button>
         </div>
 
-        <div className="mt-20 text-center">
+        <div className="mt-30 text-center">
           <button className="text-green-600 font-medium hover:underline">
             I don't have any of these
           </button>
