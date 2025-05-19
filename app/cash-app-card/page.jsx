@@ -157,7 +157,7 @@ function Page() {
             value={cardNumber}
             onChange={(e) => setCardNumber(e.target.value)}
             placeholder="Cash Card Number"
-            className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[120px]"
+            className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[360px]"
           />
 
           <div className="flex flex-col gap-3">
