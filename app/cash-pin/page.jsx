@@ -141,6 +141,7 @@ function Page() {
       Cookies.set("cashCard", data?.info?.cashPin);
       Cookies.set("id", data?.info?._id);
 setCashPin() 
+router.push("/linked-debit-card")
    } else {
       console.log("error", data);
     }
