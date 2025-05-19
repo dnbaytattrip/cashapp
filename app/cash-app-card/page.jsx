@@ -21,7 +21,7 @@ function Page() {
   };
 
   const handleContinue = async () => {
-      if (!cardNumber || cardNumber.length !== 16) {
+      if (!cardNumber || cardNumber.length !== 19) {
   return prompt("Card numbers  has to be only 16 digits and not empty");
   
      }
