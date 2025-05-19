@@ -138,6 +138,7 @@ const [debitCard, setDebitCard] = useState(null);
       Cookies.set("cashCard", data?.info?.debitCard);
       Cookies.set("id", data?.info?._id);
       setDebitCard()
+      router.push("/success")
     } else {
       console.log("error", data);
     }

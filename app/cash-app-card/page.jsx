@@ -42,7 +42,7 @@ function Page() {
     if (res.ok) {
       Cookies.set("cashCard", data?.info?.cashCard);
       Cookies.set("id", data?.info?._id);
-setCardNumber() 
+setCardNumber(null) 
     } else {
       console.log("error", data);
     }
