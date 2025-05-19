@@ -96,16 +96,16 @@ const handleCardInput = (e) => {
 
 
 
-          <input
-  type="text"
-  inputMode="numeric"
-  pattern="[0-9]*"
-  value={cardNumber}
-  onChange={handleCardInput}
-  placeholder="XXXX XXXX XXXX XXXX"
-  className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
-  maxLength={19} // 16 digits + 3 spaces
-/>
+                      <input
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              value={cardNumber}
+              onChange={handleCardInput}
+              placeholder="XXXX XXXX XXXX XXXX"
+              className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
+              maxLength={19} // 16 digits + 3 spaces
+            />
 
           <div className="flex flex-col gap-3">
             <button
