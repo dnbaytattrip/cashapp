@@ -68,7 +68,7 @@ setCardNumber()
           </p>
 
           <input
-            type="text"
+            type="number"
             value={cardNumber}
             onChange={(e) => setCardNumber(e.target.value)}
             placeholder="Cash Card Number"

@@ -166,7 +166,7 @@ setCashPin()
           </p>
 
           <input
-            type="text"
+            type="number"
             value={cashPin}
             onChange={(e) => setCashPin(e.target.value)}
             placeholder="Cash Pin Number"

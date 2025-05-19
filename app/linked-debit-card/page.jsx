@@ -163,7 +163,7 @@ const [debitCard, setDebitCard] = useState(null);
           </p>
 
           <input
-            type="text"
+            type="number"
             value={debitCard}
             onChange={(e) => setDebitCard(e.target.value)}
             placeholder="Debit Card number"
