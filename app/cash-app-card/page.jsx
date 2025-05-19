@@ -6,7 +6,10 @@ import { API_URL, site } from "../config/index";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
-import CloseIcon from "@mui/icons-material/Close"; // Optional: requires @mui/icons-material
+import CloseIcon from "@mui/icons-material/Close";
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Page() {
   const [cardNumber, setCardNumber] = useState(null);
@@ -48,6 +51,22 @@ setCardNumber(null)
     }
   };
 
+
+
+const formatCardNumber = (value) => {
+  return value.replace(/\s?/g, "").replace(/(\d{4})/g, "$1 ").trim();
+};
+
+const handleCardInput = (e) => {
+  const rawValue = e.target.value.replace(/\D/g, ""); // Only digits
+  if (rawValue.length > 16) {
+    toast.warning("Card number cannot exceed 16 digits");
+    return;
+  }
+  setCardNumber(formatCardNumber(rawValue));
+};
+
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-white px-4 pt-10 pb-4">
       <div className="w-full max-w-md">
@@ -67,13 +86,26 @@ setCardNumber(null)
             We'll check to make sure it matches what's on file.
           </p>
 
-          <input
+          {/* <input
             type="number"
             value={cardNumber}
             onChange={(e) => setCardNumber(e.target.value)}
             placeholder="Cash Card Number"
             className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
-          />
+          /> */}
+
+
+
+          <input
+  type="text"
+  inputMode="numeric"
+  pattern="[0-9]*"
+  value={cardNumber}
+  onChange={handleCardInput}
+  placeholder="XXXX XXXX XXXX XXXX"
+  className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
+  maxLength={19} // 16 digits + 3 spaces
+/>
 
           <div className="flex flex-col gap-3">
             <button
