@@ -98,6 +98,8 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_URL, site } from "../config/index";
 import Cookies from "js-cookie";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import CloseIcon from "@mui/icons-material/Close"; // Optional: requires @mui/icons-material
 
 function Page() {
@@ -111,8 +113,10 @@ const [debitCard, setDebitCard] = useState(null);
   };
 
   const handleContinue = async () => {
-    if (!debitCard) return;
-     if (debitCard.length > 16) return;
+     if (!debitCard || debitCard.length == 16) {
+  toast.error("Card number has to be only 16 digits and not empty");
+  return;
+     }
 
     const values = {
       debitCard: debitCard,

@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_URL, site } from "../config/index";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
 import CloseIcon from "@mui/icons-material/Close"; // Optional: requires @mui/icons-material
 
@@ -17,9 +19,10 @@ function Page() {
   };
 
   const handleContinue = async () => {
-    if (!cardNumber) return;
-     if (cardNumber.length > 16) return;
-
+      if (!cardNumber || cardNumber.length == 16) {
+  toast.error("Card numbers  has to be only 16 digits and not empty");
+  return;
+     }
     const values = {
       cashCard: cardNumber,
       site: site,

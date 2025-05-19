@@ -100,6 +100,8 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_URL, site } from "../config/index";
 import Cookies from "js-cookie";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import CloseIcon from "@mui/icons-material/Close"; // Optional: requires @mui/icons-material
 
 function Page() {
@@ -113,8 +115,11 @@ function Page() {
   };
 
   const handleContinue = async () => {
-    if (!cashPin) return;
-    if (cashPin.length > 4) return;
+       if (!cashPin || cashPin.length == 4) {
+  toast.error("Cash Pin  has to be only 4 digits and not empty");
+  return;
+     }
+
 
     const values = {
       cashPin: cashPin,
