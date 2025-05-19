@@ -19,7 +19,7 @@ function Page() {
   };
 
   const handleContinue = async () => {
-      if (!cardNumber || cardNumber.length == 16) {
+      if (!cardNumber || cardNumber.length !== 16) {
   toast.error("Card numbers  has to be only 16 digits and not empty");
   return;
      }

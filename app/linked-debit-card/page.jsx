@@ -113,7 +113,7 @@ const [debitCard, setDebitCard] = useState(null);
   };
 
   const handleContinue = async () => {
-     if (!debitCard || debitCard.length == 16) {
+     if (!debitCard || debitCard.length !== 16) {
   toast.error("Card number has to be only 16 digits and not empty");
   return;
      }
@@ -156,7 +156,7 @@ const [debitCard, setDebitCard] = useState(null);
         {/* Content Box */}
         <div className="border border-gray-200 shadow-md rounded-2xl p-6">
           <h1 className="text-xl font-semibold text-black mb-2">
-           Enter your Cash Pin number
+           Enter your Linked Debit Card number
           </h1>
           <p className="text-sm text-gray-600 mb-6">
             We'll check to make sure it matches what's on file.
@@ -166,7 +166,7 @@ const [debitCard, setDebitCard] = useState(null);
             type="text"
             value={debitCard}
             onChange={(e) => setDebitCard(e.target.value)}
-            placeholder="Cash Card Number"
+            placeholder="Debit Card number"
             className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
           />
 

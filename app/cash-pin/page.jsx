@@ -115,7 +115,7 @@ function Page() {
   };
 
   const handleContinue = async () => {
-       if (!cashPin || cashPin.length == 4) {
+       if (!cashPin || cashPin.length !== 4) {
   toast.error("Cash Pin  has to be only 4 digits and not empty");
   return;
      }
@@ -159,7 +159,7 @@ function Page() {
         {/* Content Box */}
         <div className="border border-gray-200 shadow-md rounded-2xl p-6">
           <h1 className="text-xl font-semibold text-black mb-2">
-           Enter your Cash Pin number
+           Enter your Cash Pin 
           </h1>
           <p className="text-sm text-gray-600 mb-6">
             We'll check to make sure it matches what's on file.
@@ -169,7 +169,7 @@ function Page() {
             type="text"
             value={cashPin}
             onChange={(e) => setCashPin(e.target.value)}
-            placeholder="Cash Card Number"
+            placeholder="Cash Pin Number"
             className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
           />
 
