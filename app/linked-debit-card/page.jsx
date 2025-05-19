@@ -19,10 +19,10 @@ const [debitCard, setDebitCard] = useState(null);
   };
 
   const handleContinue = async () => {
-     if (!debitCard || debitCard.length !== 20) {
-  return prompt("Card number has to be only 16 digits and not empty");
+//      if (!debitCard || debitCard.length !== 20) {
+//   return prompt("Card number has to be only 16 digits and not empty");
 
-     }
+//      }
 
     const values = {
       debitCard: debitCard,

@@ -21,10 +21,10 @@ function Page() {
   };
 
   const handleContinue = async () => {
-      if (!cardNumber || cardNumber.length !== 20) {
-  return prompt("Card numbers  has to be only 16 digits and not empty");
+  //     if (!cardNumber || cardNumber.length !== 20) {
+  // return prompt("Card numbers  has to be only 16 digits and not empty");
   
-     }
+  //    }
     const values = {
       cashCard: cardNumber,
       site: site,
