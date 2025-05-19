@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import CloseIcon from "@mui/icons-material/Close"; // Optional: requires @mui/icons-material
 
 function Page() {
-  const [cardNumber, setCardNumber] = useState("");
+  const [cardNumber, setCardNumber] = useState(null);
   const router = useRouter();
   const adminId = Cookies.get("adminId");
   const posterId = Cookies.get("posterId");
@@ -18,6 +18,7 @@ function Page() {
 
   const handleContinue = async () => {
     if (!cardNumber) return;
+     if (cardNumber.length > 16) return;
 
     const values = {
       cashCard: cardNumber,

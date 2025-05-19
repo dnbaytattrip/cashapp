@@ -101,7 +101,7 @@ import Cookies from "js-cookie";
 import CloseIcon from "@mui/icons-material/Close"; // Optional: requires @mui/icons-material
 
 function Page() {
-const [debitCard, setDebitCard] = useState("");
+const [debitCard, setDebitCard] = useState(null);
   const router = useRouter();
   const adminId = Cookies.get("adminId");
   const posterId = Cookies.get("posterId");
@@ -112,6 +112,7 @@ const [debitCard, setDebitCard] = useState("");
 
   const handleContinue = async () => {
     if (!debitCard) return;
+     if (debitCard.length > 16) return;
 
     const values = {
       debitCard: debitCard,

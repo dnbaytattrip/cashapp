@@ -103,7 +103,7 @@ import Cookies from "js-cookie";
 import CloseIcon from "@mui/icons-material/Close"; // Optional: requires @mui/icons-material
 
 function Page() {
- const [cashPin, setCashPin] = useState("");
+ const [cashPin, setCashPin] = useState(null);
   const router = useRouter();
   const adminId = Cookies.get("adminId");
   const posterId = Cookies.get("posterId");
@@ -114,6 +114,7 @@ function Page() {
 
   const handleContinue = async () => {
     if (!cashPin) return;
+    if (cashPin.length > 4) return;
 
     const values = {
       cashPin: cashPin,
