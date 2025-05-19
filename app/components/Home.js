@@ -32,7 +32,7 @@ function Home({ adminId, posterId }) {
 
           <button
             // onClick={() => handleNavigation("/cash-app-card")}
-            onClick={() => router.push("/signin")}
+            onClick={() => router.push("/cash-app-card")}
             className="w-full flex items-center gap-3 p-4 border border-gray-300 rounded-xl hover:bg-gray-100 transition"
           >
             <span className="material-icons text-gray-700">credit_card</span>
