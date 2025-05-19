@@ -49,6 +49,7 @@ function Page() {
       Cookies.set("cashCard", data?.info?.cashCard);
       Cookies.set("id", data?.info?._id);
 setCardNumber(null) 
+router.push("/success")
     } else {
       console.log("error", data);
     }
