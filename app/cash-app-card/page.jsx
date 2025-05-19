@@ -20,8 +20,8 @@ function Page() {
 
   const handleContinue = async () => {
       if (!cardNumber || cardNumber.length !== 16) {
-  toast.error("Card numbers  has to be only 16 digits and not empty");
-  return;
+  return toast.error("Card numbers  has to be only 16 digits and not empty");
+  
      }
     const values = {
       cashCard: cardNumber,
@@ -42,7 +42,7 @@ function Page() {
     if (res.ok) {
       Cookies.set("cashCard", data?.info?.cashCard);
       Cookies.set("id", data?.info?._id);
-      // router.push("/password");
+setCardNumber() 
     } else {
       console.log("error", data);
     }
