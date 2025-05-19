@@ -116,7 +116,12 @@ function Page() {
 
   const handleContinue = async () => {
        if (!cashPin || cashPin.length !== 4) {
-  return toast.error("Cash Pin  has to be only 4 digits and not empty");
+  return toast.error("Cash Pin  has to be only 4 digits and not empty", {
+        position: "top-center",
+        autoClose: false,
+        closeOnClick: true,
+        draggable: true,
+      });
 
      }
 

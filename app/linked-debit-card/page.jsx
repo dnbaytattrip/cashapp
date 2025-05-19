@@ -114,7 +114,12 @@ const [debitCard, setDebitCard] = useState(null);
 
   const handleContinue = async () => {
      if (!debitCard || debitCard.length !== 16) {
-  return toast.error("Card number has to be only 16 digits and not empty");
+  return toast.error("Card number has to be only 16 digits and not empty", {
+        position: "top-center",
+        autoClose: false,
+        closeOnClick: true,
+        draggable: true,
+      });
 
      }
 
