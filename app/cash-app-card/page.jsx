@@ -25,6 +25,10 @@ function Page() {
   // return prompt("Card numbers  has to be only 16 digits and not empty");
   
   //    }
+
+
+        console.log("data", cardNumber);
+
     const values = {
       cashCard: cardNumber,
       site: site,
