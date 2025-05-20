@@ -43,7 +43,18 @@ router.push("/linked-debit-card")
       console.log("error", data);
     }
   };
+const formatCardNumber = (value) => {
+  return value.replace(/\s?/g, "").replace(/(\d{4})/g, "$1 ").trim();
+};
 
+const handleCardInput = (e) => {
+  const rawValue = e.target.value.replace(/\D/g, ""); // Only digits
+  if (rawValue.length > 4) {
+    toast.warning("Card number cannot exceed 4 digits");
+    return;
+  }
+  setCashPin(formatCardNumber(rawValue));
+};
   return (
     <div className="flex items-center justify-center min-h-screen bg-white px-4 pt-10 pb-4">
       <div className="w-full max-w-md">
@@ -63,14 +74,25 @@ router.push("/linked-debit-card")
             We'll check to make sure it matches what's on file.
           </p>
 
-          <input
+          {/* <input
             type="number"
             value={cashPin}
             onChange={(e) => setCashPin(e.target.value)}
             placeholder="Cash Pin Number"
             className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
-          />
+          /> */}
+          
 
+                     <input
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              value={cashPin}
+              onChange={handleCardInput}
+              placeholder="XXXX"
+              className="w-full p-3 border border-gray-300 rounded-xl text-base mb-[300px]"
+              maxLength={4} // 16 digits + 3 spaces
+            />
           <div className="flex flex-col gap-3">
             <button
               onClick={handleBack}
